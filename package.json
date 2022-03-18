@@ -20,6 +20,7 @@
     "gatsby": "^4.9.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-toastify": "^8.2.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {

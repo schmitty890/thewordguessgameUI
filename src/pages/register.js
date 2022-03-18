@@ -1,9 +1,11 @@
 import React from "react"
 import { LockClosedIcon } from "@heroicons/react/solid"
 import { signUp } from "../api/signUp"
-
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import { Formik } from "formik"
 
+const notify = () => toast("Wow so easy!")
 const Basic = () => (
   <div>
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -43,13 +45,12 @@ const Basic = () => (
             return errors
           }}
           onSubmit={async (values, { setSubmitting }) => {
-            const signUserUp = await signUp(values)
-
-            console.log(signUserUp)
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2))
-              setSubmitting(false)
-            }, 400)
+            const response = await toast.promise(signUp(values), {
+              pending: "Creating User...",
+              success: "User created 👌",
+              error: "User rejected 🤯",
+            })
+            // console.log(response)
           }}
         >
           {({
@@ -147,6 +148,19 @@ const Basic = () => (
         </Formik>
       </div>
     </div>
+    <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />
+    {/* Same as */}
+    <ToastContainer />
   </div>
 )
 

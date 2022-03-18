@@ -2,7 +2,7 @@ import React from "react"
 import { Fragment } from "react"
 import { Disclosure, Menu, Transition } from "@headlessui/react"
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
-import LoggedInHeader from "../components/headers/loggedInHeader"
+import DefaultHeader from "../components/headers/defaultHeader"
 
 export default function Test() {
   return (
@@ -16,7 +16,7 @@ export default function Test() {
         ```
       */}
       <div className="min-h-full">
-        <LoggedInHeader />
+        <DefaultHeader />
 
         <header className="bg-white shadow">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">

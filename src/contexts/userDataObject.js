@@ -39,6 +39,7 @@ class UserAuthProvider extends Component {
 
       switch (urlPath) {
         case "/dashboard/":
+        case "/dashboard":
           window.location.href = "/"
           break
         default:

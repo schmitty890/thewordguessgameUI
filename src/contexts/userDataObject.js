@@ -10,7 +10,7 @@ class UserAuthProvider extends Component {
     userID: "",
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // console.log("componentWillMount")
     this.getUser()
   }

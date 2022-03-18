@@ -45,14 +45,38 @@ const Basic = () => (
             return errors
           }}
           onSubmit={async (values, { setSubmitting }) => {
-            const response = await toast.promise(signUp(values), {
-              pending: "Creating User...",
-              success: "User created 👌",
-              error: "User rejected 🤯",
-            })
+            // const id = await toast.loading(signUp(values))
+            // console.log(id)
+            //do something else
+            // toast.update(id, { render: "All is good", type: "success", isLoading: false });
+
+            var testToast = toast.info("loading")
+            // toast.info("loading")
+            // const notify = () =>
+            //   (testToast = toast.info("working...", {
+            //     autoClose: false,
+            //   }))
+            // notify()
+
+            const response = await signUp(values)
             console.log(response)
-            if (response.status === 200) {
-              window.location.href = "/"
+            console.log(response.status)
+
+            if (response.status === 409) {
+              toast.update(testToast, {
+                render: `${response.data.message} 🤯`,
+                type: toast.TYPE.ERROR,
+                autoClose: 5000,
+              })
+            } else if (response.status === 200) {
+              toast.update(testToast, {
+                render: `User created 👌  Redirecting to your dashboard page`,
+                type: toast.TYPE.SUCCESS,
+                autoClose: 5000,
+              })
+              setTimeout(() => {
+                window.location.href = "/dashboard"
+              }, 5000)
             }
           }}
         >

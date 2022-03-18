@@ -50,7 +50,10 @@ const Basic = () => (
               success: "User created 👌",
               error: "User rejected 🤯",
             })
-            // console.log(response)
+            console.log(response)
+            if (response.status === 200) {
+              window.location.href = "/"
+            }
           }}
         >
           {({

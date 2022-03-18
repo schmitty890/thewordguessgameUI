@@ -1,6 +1,6 @@
 import React from "react"
 import { LockClosedIcon } from "@heroicons/react/solid"
-import { signUp } from "../api/signup"
+import { signUp } from "../api/signUp"
 
 import { Formik } from "formik"
 

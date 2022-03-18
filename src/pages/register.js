@@ -45,22 +45,10 @@ const Basic = () => (
             return errors
           }}
           onSubmit={async (values, { setSubmitting }) => {
-            // const id = await toast.loading(signUp(values))
-            // console.log(id)
-            //do something else
-            // toast.update(id, { render: "All is good", type: "success", isLoading: false });
-
-            var testToast = toast.info("loading")
-            // toast.info("loading")
-            // const notify = () =>
-            //   (testToast = toast.info("working...", {
-            //     autoClose: false,
-            //   }))
-            // notify()
+            var testToast = toast.info("Signing you up...")
 
             const response = await signUp(values)
-            console.log(response)
-            console.log(response.status)
+            // console.log(response)
 
             if (response.status === 409) {
               toast.update(testToast, {

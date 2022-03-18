@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { Formik } from "formik"
 
-const notify = () => toast("Wow so easy!")
 const Login = () => (
   <div>
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -45,14 +44,24 @@ const Login = () => (
             return errors
           }}
           onSubmit={async (values, { setSubmitting }) => {
-            const response = await toast.promise(login(values), {
-              pending: "Loggin in...",
-              success: "User logged in 👌",
-              error: "User rejected 🤯",
-            })
-            console.log(response)
-            if (response.status === 200) {
-              window.location.href = "/dashboard"
+            var testToast = toast.info("Logging in...")
+
+            const response = await login(values)
+            if (response.status === 401) {
+              toast.update(testToast, {
+                render: `${response.data.message} 🤯`,
+                type: toast.TYPE.ERROR,
+                autoClose: 5000,
+              })
+            } else if (response.status === 200) {
+              toast.update(testToast, {
+                render: `Login successful 👌  Redirecting to your dashboard page`,
+                type: toast.TYPE.SUCCESS,
+                autoClose: 5000,
+              })
+              setTimeout(() => {
+                window.location.href = "/dashboard"
+              }, 5000)
             }
           }}
         >

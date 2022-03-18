@@ -69,6 +69,7 @@ class UserAuthProvider extends Component {
         value={{
           userID: this.state.userID,
           loggedIn: this.state.loggedIn,
+          logout: this.logout,
         }}
       >
         {this.props.children}

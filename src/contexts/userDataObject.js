@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { getUserDataObject } from "../api/getUserDataObject"
+import { getUserDataObject, getUserById } from "../api/getUserDataObject"
 
 const { Provider, Consumer } = React.createContext()
 // Context.Consumer, Context.Provider
@@ -8,6 +8,7 @@ class UserAuthProvider extends Component {
   state = {
     loggedIn: false,
     userID: "",
+    user: null,
   }
 
   componentDidMount() {
@@ -16,10 +17,15 @@ class UserAuthProvider extends Component {
   }
 
   getUser = async () => {
-    console.log(window.localStorage.getItem("_id"))
-    if (window.localStorage.getItem("_id")) {
+    // console.log(window.localStorage.getItem("_id"))
+    const userLocalStorageId = window.localStorage.getItem("_id")
+    console.log(userLocalStorageId)
+    if (userLocalStorageId) {
+      const user = await getUserById(userLocalStorageId)
+      console.log(user)
       this.setState({
         loggedIn: true,
+        user: user,
         userID: window.localStorage.getItem("_id"),
         admin: window.localStorage.getItem("admin"),
         loading: false,
@@ -40,6 +46,8 @@ class UserAuthProvider extends Component {
       switch (urlPath) {
         case "/dashboard/":
         case "/dashboard":
+        case "/profile/":
+        case "/profile":
           window.location.href = "/"
           break
         default:
@@ -68,6 +76,7 @@ class UserAuthProvider extends Component {
       <Provider
         value={{
           userID: this.state.userID,
+          user: this.state.user,
           loggedIn: this.state.loggedIn,
           logout: this.logout,
         }}

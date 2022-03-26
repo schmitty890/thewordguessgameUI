@@ -19,11 +19,11 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 }
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-  { name: "Reports", href: "#", current: false },
+  { name: "Dashboard", href: "/dashboard", current: false },
+  { name: "How to play", href: "#", current: false },
+  { name: "FAQ", href: "#", current: false },
+  // { name: "Calendar", href: "#", current: false },
+  // { name: "Reports", href: "#", current: false },
 ]
 const userNavigation = [
   { name: "Your Profile", href: "#", logout: false },
@@ -74,6 +74,49 @@ export default function DefaultHeader() {
                                   {item.name}
                                 </a>
                               ))}
+
+                              <a
+                                href="#"
+                                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                              >
+                                test
+                              </a>
+
+                              <div className=" text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                                <div className="group relative">
+                                  <button className="  rounded">
+                                    Dropdown test
+                                  </button>
+                                  <nav className="border border-2 bg-white invisible border-gray-800 rounded w-60 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1">
+                                    <ul className="py-1 text-gray-700">
+                                      <li>
+                                        <a
+                                          href="#"
+                                          className="block px-4 py-2 hover:bg-gray-100"
+                                        >
+                                          Edit
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a
+                                          href="#"
+                                          className="block px-4 py-2 hover:bg-gray-100"
+                                        >
+                                          Delete
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a
+                                          href="#"
+                                          className="block px-4 py-2 hover:bg-gray-100"
+                                        >
+                                          Reply
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </nav>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -118,7 +161,7 @@ export default function DefaultHeader() {
                                 <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                   <Menu.Item>
                                     <a
-                                      href="#"
+                                      href="/profile"
                                       className="block px-4 py-2 text-sm text-gray-700"
                                     >
                                       Your Profile

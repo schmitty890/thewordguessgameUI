@@ -36,3 +36,27 @@ export const getUserDataObject = async => {
     return err.message
   }
 }
+
+export const getUserById = async id => {
+  console.log("get user by id")
+  console.log(id)
+  try {
+    let baseURL =
+      window.location.hostname === "localhost"
+        ? "http://localhost:8081"
+        : "https://thewordguessgameapi.herokuapp.com"
+
+    // post data to a url endpoint
+    const response = await axios.get(`${baseURL}/user/${id}`)
+    console.log(response)
+    // response.data.forEach(pattern => {
+    //   // console.log(pattern)
+    //   assignColors(pattern)
+    // })
+    // response.data = assignColors(response.data)
+
+    return response.data
+  } catch (error) {
+    console.log(error) // catches both errors
+  }
+}

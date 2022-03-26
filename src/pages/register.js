@@ -32,7 +32,7 @@ const Basic = () => (
           </p> */}
         </div>
         <Formik
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ email: "", firstName: "", password: "" }}
           validate={values => {
             const errors = {}
             if (!values.email) {
@@ -97,6 +97,22 @@ const Basic = () => (
                     className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   />
                   {errors.email && touched.email && errors.email}
+                </div>
+                <div>
+                  <label htmlFor="first-name" className="sr-only">
+                    First Name
+                  </label>
+
+                  <input
+                    type="text"
+                    name="firstName"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.firstName}
+                    required
+                    placeholder="First Name"
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  />
                 </div>
                 <div>
                   <label htmlFor="password" className="sr-only">

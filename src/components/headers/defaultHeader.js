@@ -12,16 +12,16 @@ import {
   UserAuthProvider,
   UserAuthConsumer,
 } from "../../contexts/userDataObject"
-const user = {
-  name: "Tom Cook",
-  email: "tom@example.com",
-  imageUrl:
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-}
+// const user = {
+//   name: "Tom Cook",
+//   email: "tom@example.com",
+//   imageUrl:
+//     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+// }
 const navigation = [
   { name: "Dashboard", href: "/dashboard", current: false },
   { name: "How to play", href: "#", current: false },
-  { name: "FAQ", href: "#", current: false },
+  { name: "FAQ", href: "/faq", current: false },
   // { name: "Calendar", href: "#", current: false },
   // { name: "Reports", href: "#", current: false },
 ]
@@ -39,7 +39,7 @@ export default function DefaultHeader() {
   return (
     <UserAuthProvider>
       <UserAuthConsumer>
-        {({ userID, loggedIn, logout, loading }) => (
+        {({ userID, user, loggedIn, logout, loading }) => (
           <>
             {loggedIn ? (
               <Disclosure as="nav" className="bg-gray-800">
@@ -258,7 +258,7 @@ export default function DefaultHeader() {
                           </div>
                           <div className="ml-3">
                             <div className="text-base font-medium leading-none text-white">
-                              {user.name}
+                              {user.name} {user.firstName}
                             </div>
                             <div className="text-sm font-medium leading-none text-gray-400">
                               {user.email} {userID}

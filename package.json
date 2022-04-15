@@ -18,6 +18,7 @@
     "@heroicons/react": "^1.0.6",
     "formik": "^2.2.9",
     "gatsby": "^4.9.3",
+    "gatsby-plugin-google-gtag": "^4.12.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-toastify": "^8.2.0",

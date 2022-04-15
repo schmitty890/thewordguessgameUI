@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css"
 import { Formik } from "formik"
 
 const notify = () => toast("Wow so easy!")
-const Basic = () => (
+const Register = () => (
   <div>
     <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -195,4 +195,4 @@ const Basic = () => (
   </div>
 )
 
-export default Basic
+export default Register

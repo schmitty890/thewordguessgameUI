@@ -5,6 +5,8 @@ import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline"
 import DefaultHeader from "../components/headers/defaultHeader"
 import { UserAuthProvider, UserAuthConsumer } from "../contexts/userDataObject"
 import Spinner1 from "../components/spinners/spinner1"
+import CreateGame from "../components/games/createGame"
+import CurrentGames from "../components/games/currentGames"
 import Footer from "../components/footer"
 
 export default function Dashboard() {
@@ -31,9 +33,15 @@ export default function Dashboard() {
                       <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
                         <div className="p-10">
                           our main components will go here
+                          <div className=" ">Your games</div>
+                          <CurrentGames />
+                          <div className=" ">
+                            <CreateGame />
+                          </div>
                         </div>
                       </div>
                     </div>
+
                     {/* /End replace */}
                   </div>
                 </main>

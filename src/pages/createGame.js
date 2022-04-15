@@ -70,6 +70,7 @@ export default function CreateGame() {
                                     var testToast =
                                       toast.info("Finding user...")
                                     console.log("submitting searching for user")
+
                                     console.log(values)
                                     const response = await getUserByEmail(
                                       values
@@ -99,6 +100,9 @@ export default function CreateGame() {
                                       addUserToUsersArray(response.data).then(
                                         res => {
                                           console.log(res)
+                                          document.getElementById(
+                                            "email"
+                                          ).value = ""
                                           // onClose()
                                           // toast({
                                           //   title: `${res.msg}`,
@@ -131,9 +135,10 @@ export default function CreateGame() {
                                             <div className="mb-3 xl:w-96">
                                               <div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
                                                 <input
+                                                  id="email"
                                                   type="email"
                                                   name="email"
-                                                  value={values.email}
+                                                  // value={values.email}
                                                   onChange={handleChange}
                                                   onBlur={handleBlur}
                                                   className="form-control relative flex-auto min-w-0 block px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"

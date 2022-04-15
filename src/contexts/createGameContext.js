@@ -31,14 +31,6 @@ class CreateGameProvider extends Component {
 
   removeFromGame = async user => {
     console.log(user)
-    // this.setState({
-    //   usersAddedToGame: this.state.usersAddedToGame.filter(function (user) {
-    //     console.log("user removed from state array")
-    //     console.log(user)
-    //     // return user !== user[0]._id
-    //   }),
-
-    // })
     let filteredArray = this.state.usersAddedToGame.filter(
       e => e !== user[0]._id
     )

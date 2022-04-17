@@ -171,25 +171,45 @@ export default function CreateGame() {
                                               <div>
                                                 <div className="inline-block">
                                                   {user[0].email}
+                                                  {user[0].firstName}
                                                   {user[0]._id}
-                                                  {usersAddedToGame.includes(
-                                                    user[0]._id
+                                                  {usersAddedToGame.find(
+                                                    function (ele) {
+                                                      return (
+                                                        ele._id === user[0]._id
+                                                      )
+                                                    }
                                                   )
                                                     ? "disabled"
                                                     : "not disabled"}
+                                                  {/* {usersAddedToGame.includes(
+                                                    user[0]._id
+                                                  )
+                                                    ? "disabled"
+                                                    : "not disabled"} */}
                                                 </div>
                                                 <button
                                                   className={
                                                     "" +
-                                                    (usersAddedToGame.includes(
-                                                      user[0]._id
+                                                    (usersAddedToGame.find(
+                                                      function (ele) {
+                                                        return (
+                                                          ele._id ===
+                                                          user[0]._id
+                                                        )
+                                                      }
                                                     )
                                                       ? "btn inline-block px-6 py-2 border-2 border-red-600 text-red-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
                                                       : "btn inline-block px-6 py-2 border-2 border-green-600 text-green-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out")
                                                   }
                                                   onClick={e =>
-                                                    usersAddedToGame.includes(
-                                                      user[0]._id
+                                                    usersAddedToGame.find(
+                                                      function (ele) {
+                                                        return (
+                                                          ele._id ===
+                                                          user[0]._id
+                                                        )
+                                                      }
                                                     )
                                                       ? removeFromGame(
                                                           user
@@ -217,8 +237,12 @@ export default function CreateGame() {
                                                         )
                                                   }
                                                 >
-                                                  {usersAddedToGame.includes(
-                                                    user[0]._id
+                                                  {usersAddedToGame.find(
+                                                    function (ele) {
+                                                      return (
+                                                        ele._id === user[0]._id
+                                                      )
+                                                    }
                                                   )
                                                     ? "remove"
                                                     : "add"}

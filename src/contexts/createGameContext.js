@@ -19,10 +19,16 @@ class CreateGameProvider extends Component {
   }
 
   addToGame = async user => {
+    console.log("ADDING TO GAME")
     console.log(user)
     console.log(user[0]._id)
+    const original = user[0]
+    const allowed = ["_id", "email", "firstName"]
+
+    const filtered = Object.fromEntries(allowed.map(k => [k, original[k]]))
+    console.log(this.state)
     this.setState({
-      usersAddedToGame: [...this.state.usersAddedToGame, user[0]._id],
+      usersAddedToGame: [...this.state.usersAddedToGame, filtered],
     })
     setTimeout(() => {
       console.log(this.state)
@@ -30,10 +36,19 @@ class CreateGameProvider extends Component {
   }
 
   removeFromGame = async user => {
+    console.log("REMOVING FROM GAME")
     console.log(user)
+
+    console.log(user._id)
+    console.log(user[0]._id)
+    console.log(this.state.usersAddedToGame._id)
+    console.log(this.state.usersAddedToGame)
     let filteredArray = this.state.usersAddedToGame.filter(
-      e => e !== user[0]._id
+      item => item._id !== user[0]._id
     )
+
+    // let filteredArray = this.state.usersAddedToGame.filter(e => e !== user[0])
+
     console.log(filteredArray)
     this.setState({ usersAddedToGame: filteredArray })
     setTimeout(() => {

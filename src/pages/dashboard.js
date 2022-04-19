@@ -7,6 +7,7 @@ import { UserAuthProvider, UserAuthConsumer } from "../contexts/userDataObject"
 import Spinner1 from "../components/spinners/spinner1"
 import CreateGame from "../components/games/createGame"
 import CurrentGames from "../components/games/currentGames"
+import GlobalGame from "../components/globalGames/globalGame"
 import Footer from "../components/footer"
 
 export default function Dashboard() {
@@ -30,7 +31,7 @@ export default function Dashboard() {
                   <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                     {/* Replace with your content */}
                     <div className="px-4 py-6 sm:px-0">
-                      <div className="border-4 border-dashed border-gray-200 rounded-lg h-96">
+                      <div className="border-4 border-dashed border-gray-200 rounded-lg">
                         <div className="p-10">
                           our main components will go here
                           <div className=" ">Your games</div>
@@ -38,6 +39,7 @@ export default function Dashboard() {
                           <div className=" ">
                             <CreateGame />
                           </div>
+                          <GlobalGame />
                         </div>
                       </div>
                     </div>

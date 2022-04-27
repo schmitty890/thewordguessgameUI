@@ -14,62 +14,6 @@ import { UserAuthProvider, UserAuthConsumer } from "../contexts/userDataObject"
 import Spinner1 from "../components/spinners/spinner1"
 import DefaultHeader from "../components/headers/defaultHeader"
 import Footer from "../components/footer"
-const timeline = [
-  {
-    id: 1,
-    content: "Applied to",
-    target: "Front End Developer",
-    href: "#",
-    date: "Sep 20",
-    datetime: "2020-09-20",
-    icon: UserIcon,
-    iconBackground: "bg-gray-400",
-  },
-  {
-    id: 2,
-    content: "Advanced to phone screening by",
-    target: "Bethany Blake",
-    href: "#",
-    date: "Sep 22",
-    datetime: "2020-09-22",
-    icon: ThumbUpIcon,
-    iconBackground: "bg-blue-500",
-  },
-  {
-    id: 3,
-    content: "Completed phone screening with",
-    target: "Martha Gardner",
-    href: "#",
-    date: "Sep 28",
-    datetime: "2020-09-28",
-    icon: CheckIcon,
-    iconBackground: "bg-green-500",
-  },
-  {
-    id: 4,
-    content: "Advanced to interview by",
-    target: "Bethany Blake",
-    href: "#",
-    date: "Sep 30",
-    datetime: "2020-09-30",
-    icon: ThumbUpIcon,
-    iconBackground: "bg-blue-500",
-  },
-  {
-    id: 5,
-    content: "Completed interview with",
-    target: "Katherine Snyder",
-    href: "#",
-    date: "Oct 4",
-    datetime: "2020-10-04",
-    icon: CheckIcon,
-    iconBackground: "bg-green-500",
-  },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ")
-}
 
 const DailyGlobalGame = () => (
   <UserAuthProvider>
@@ -125,62 +69,10 @@ const DailyGlobalGame = () => (
                                       }}
                                       validate={values => {
                                         console.log("VALIDATE VALUES")
-                                        console.log(values)
+                                        console.log(values.wordGuess)
                                         console.log("VALIDATE VALUES")
 
-                                        // document.getElementById(
-                                        //   "wordGuess"
-                                        // ).value = ""
-                                        var valuesByClassName =
-                                          document.getElementsByClassName(
-                                            "wordGuess"
-                                          )
-                                        let valuesArr = []
-                                        for (
-                                          let i = 0;
-                                          i < valuesByClassName.length;
-                                          i++
-                                        ) {
-                                          valuesArr.push(
-                                            valuesByClassName[i].value
-                                          )
-                                        }
-
-                                        console.log("the values")
-                                        console.log(valuesArr)
-                                        valuesArr = valuesArr.join("")
-                                        console.log({ wordGuess: valuesArr })
-                                        console.log(typeof valuesArr)
-                                        console.log(values)
-                                        console.log(typeof values)
-                                        console.log("the values")
-
-                                        let inputSection =
-                                          document.querySelector(
-                                            "#input-section"
-                                          )
-
-                                        for (let input of inputSection.children) {
-                                          input.onkeyup = function () {
-                                            // determine if user has clicked the delete button or not
-                                            if (input.nextElementSibling) {
-                                              console.log(
-                                                "see if we have to reset the focus"
-                                              )
-                                              console.log(valuesArr)
-                                              if (valuesArr) {
-                                                input.nextElementSibling.focus()
-                                              }
-                                            }
-                                          }
-                                        }
-                                        // const errors = {}
-                                        // if (!values.firstGuess) {
-                                        //   errors.firstGuess = "Required"
-                                        // } else if ((values.firstGuess = "a")) {
-                                        //   errors.firstGuess = "go to next"
-                                        // }
-                                        // return errors
+                                        // TODO WE NEED TO REDO THIS WHOLE VALIDATE SECTION
                                       }}
                                       onSubmit={async (
                                         values,
@@ -210,14 +102,14 @@ const DailyGlobalGame = () => (
                                           )
                                         }
 
-                                        console.log("the values")
-                                        console.log(valuesArr)
-                                        valuesArr = valuesArr.join("")
-                                        console.log(valuesArr)
-                                        console.log(typeof valuesArr)
-                                        console.log(values)
-                                        console.log(typeof values)
-                                        console.log("the values")
+                                        // console.log("the values")
+                                        // console.log(valuesArr)
+                                        // valuesArr = valuesArr.join("")
+                                        // console.log(valuesArr)
+                                        // console.log(typeof valuesArr)
+                                        // console.log(values)
+                                        // console.log(typeof values)
+                                        // console.log("the values")
                                         const response = await makeGuess({
                                           wordGuess: valuesArr,
                                         })
@@ -342,15 +234,14 @@ const DailyGlobalGame = () => (
                                                 ? todaysWordLength.map(
                                                     (letter, i) => (
                                                       <input
-                                                        // id="wordGuess"
                                                         type="text"
                                                         key={i}
                                                         name="wordGuess"
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
-                                                        value={values.word}
                                                         required
                                                         placeholder="Letter"
+                                                        maxLength="1"
                                                         className={
                                                           "wordGuess inline-flex text-center appearance-none rounded-none relative px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm " +
                                                           (todaysWordLength.length ===
@@ -407,6 +298,9 @@ const DailyGlobalGame = () => (
                                                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                               /> */}
                                               {/* {errors.email && touched.email && errors.email} */}
+                                              {errors.wordGuess &&
+                                                touched.wordGuess &&
+                                                errors.wordGuess}
                                             </div>
                                           </div>
 

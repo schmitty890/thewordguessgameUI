@@ -6,7 +6,7 @@ export const getUserDataObject = async => {
     let baseURL =
       window.location.hostname === "localhost"
         ? "http://localhost:8081"
-        : "https://thewordguessgameapi.herokuapp.com"
+        : "https://thewordguessgameapi-shnp2.ondigitalocean.app"
 
     var myStorage = window.localStorage
     const userID = myStorage.getItem("_id")
@@ -44,7 +44,7 @@ export const getUserById = async id => {
     let baseURL =
       window.location.hostname === "localhost"
         ? "http://localhost:8081"
-        : "https://thewordguessgameapi.herokuapp.com"
+        : "https://thewordguessgameapi-shnp2.ondigitalocean.app"
 
     // post data to a url endpoint
     const response = await axios.get(`${baseURL}/user/${id}`)

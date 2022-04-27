@@ -23,7 +23,7 @@ export const dailyGlobalUserGuess = async data => {
     let baseURL =
       window.location.hostname === "localhost"
         ? "http://localhost:8081"
-        : "https://thewordguessgameapi.herokuapp.com"
+        : "https://thewordguessgameapi-shnp2.ondigitalocean.app"
 
     console.log("log user in with data")
 
@@ -56,7 +56,7 @@ export const getUsersDailyGuesses = async id => {
     let baseURL =
       window.location.hostname === "localhost"
         ? "http://localhost:8081"
-        : "https://thewordguessgameapi.herokuapp.com"
+        : "https://thewordguessgameapi-shnp2.ondigitalocean.app"
 
     // post data to a url endpoint
     const response = await axios.get(`${baseURL}/getUsersGuesses/${id}`)
@@ -83,7 +83,7 @@ export const determineDailyWordLength = async data => {
     let baseURL =
       window.location.hostname === "localhost"
         ? "http://localhost:8081"
-        : "https://thewordguessgameapi.herokuapp.com"
+        : "https://thewordguessgameapi-shnp2.ondigitalocean.app"
 
     console.log("we are calling the get daily word length api")
     // post data to a url endpoint
@@ -123,7 +123,7 @@ export const determineResettingDailyGuesses = async data => {
     let baseURL =
       window.location.hostname === "localhost"
         ? "http://localhost:8081"
-        : "https://thewordguessgameapi.herokuapp.com"
+        : "https://thewordguessgameapi-shnp2.ondigitalocean.app"
 
     console.log("log user in with data")
 

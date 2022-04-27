@@ -5,7 +5,7 @@ export const getUserByEmail = async data => {
     let baseURL =
       window.location.hostname === "localhost"
         ? "http://localhost:8081"
-        : "https://thewordguessgameapi.herokuapp.com"
+        : "https://thewordguessgameapi-shnp2.ondigitalocean.app"
 
     // post data to a url endpoint
     const response = await axios

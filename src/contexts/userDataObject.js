@@ -28,9 +28,9 @@ class UserAuthProvider extends Component {
         user: user,
         userID: window.localStorage.getItem("_id"),
         admin: window.localStorage.getItem("admin"),
-        loading: false,
+        // loading: false,
       })
-
+      // console.log("SETTING LOADING TO FALSE")
       const urlPath = window.location.pathname
       switch (urlPath) {
         case "/":
@@ -38,6 +38,9 @@ class UserAuthProvider extends Component {
           break
         default:
           console.log("do nothing, user is logged in")
+          this.setState({
+            loading: false,
+          })
           break
       }
     } else {

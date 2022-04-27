@@ -328,14 +328,14 @@ const DailyGlobalGame = () => (
                                     <div>user has no streak</div>
                                   )}
                                 </div>
-
-                                <div className="flow-root">
-                                  guesses
-                                  <ul
-                                    role="list"
-                                    className="divide-y divide-gray-200"
-                                  >
-                                    {/* {userGlobalGameStats ? (
+                                {todaysWordLength ? (
+                                  <div className="flow-root">
+                                    guesses
+                                    <ul
+                                      role="list"
+                                      className="divide-y divide-gray-200"
+                                    >
+                                      {/* {userGlobalGameStats ? (
                                       userGlobalGameStats.guesses ? (
                                         userGlobalGameStats.guesses.map(
                                           (guess, i) => (
@@ -354,122 +354,125 @@ const DailyGlobalGame = () => (
                                       <div>no user has played yet</div>
                                     )} */}
 
-                                    {/* <div>
+                                      {/* <div>
                                       {
                                         userGlobalGameStats.guesses[0]
                                           .correctSpots[0].spot
                                       }
                                     </div> */}
-                                  </ul>
-                                  <div>
-                                    {userGlobalGameStats ? (
-                                      userGlobalGameStats.guesses ? (
-                                        userGlobalGameStats.guesses.map(
-                                          (guess, i) => (
-                                            <div className=" " key={i}>
-                                              {guess.correctSpots.map(
-                                                (spot, j) => (
-                                                  // <span
-                                                  //   className={
-                                                  //     "w-1/6 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium " +
-                                                  //     (spot.spot === "correct"
-                                                  //       ? "bg-green-100 text-green-800"
-                                                  //       : spot.spot ===
-                                                  //         "in the word"
-                                                  //       ? "bg-yellow-100 text-yellow-800"
-                                                  //       : spot.spot ===
-                                                  //         "not there"
-                                                  //       ? "bg-red-100 text-red-800"
-                                                  //       : "")
-                                                  //   }
-                                                  // >
-                                                  //   {spot.letter}
-                                                  // </span>
+                                    </ul>
+                                    <div>
+                                      {userGlobalGameStats ? (
+                                        userGlobalGameStats.guesses ? (
+                                          userGlobalGameStats.guesses.map(
+                                            (guess, i) => (
+                                              <div className=" " key={i}>
+                                                {guess.correctSpots.map(
+                                                  (spot, j) => (
+                                                    // <span
+                                                    //   className={
+                                                    //     "w-1/6 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium " +
+                                                    //     (spot.spot === "correct"
+                                                    //       ? "bg-green-100 text-green-800"
+                                                    //       : spot.spot ===
+                                                    //         "in the word"
+                                                    //       ? "bg-yellow-100 text-yellow-800"
+                                                    //       : spot.spot ===
+                                                    //         "not there"
+                                                    //       ? "bg-red-100 text-red-800"
+                                                    //       : "")
+                                                    //   }
+                                                    // >
+                                                    //   {spot.letter}
+                                                    // </span>
 
-                                                  <div
-                                                    key={j}
-                                                    className={
-                                                      "mb-2 inline-flex items-center justify-center p-2 border border-slate-900 " +
-                                                      (spot.spot === "correct"
-                                                        ? "bg-green-100 text-green-800 "
-                                                        : spot.spot ===
-                                                          "in the word"
-                                                        ? "bg-yellow-100 text-yellow-800 "
-                                                        : spot.spot ===
-                                                          "not there"
-                                                        ? "bg-red-100 text-red-800 "
-                                                        : "") +
-                                                      (todaysWordLength.length ===
-                                                      1
-                                                        ? "w-1/1"
-                                                        : todaysWordLength.length ===
-                                                          2
-                                                        ? "w-1/2"
-                                                        : todaysWordLength.length ===
-                                                          3
-                                                        ? "w-1/3"
-                                                        : todaysWordLength.length ===
-                                                          4
-                                                        ? "w-1/4"
-                                                        : todaysWordLength.length ===
-                                                          5
-                                                        ? "w-1/5"
-                                                        : todaysWordLength.length ===
-                                                          6
-                                                        ? "w-1/6"
-                                                        : todaysWordLength.length ===
-                                                          7
-                                                        ? "w-1/7"
-                                                        : todaysWordLength.length ===
-                                                          8
-                                                        ? "w-1/8"
-                                                        : todaysWordLength.length ===
-                                                          9
-                                                        ? "w-1/9"
-                                                        : todaysWordLength.length ===
-                                                          10
-                                                        ? "w-1/10"
-                                                        : todaysWordLength.length ===
-                                                          11
-                                                        ? "w-1/11"
-                                                        : todaysWordLength.length ===
-                                                          12
-                                                        ? "w-1/12"
-                                                        : "")
-                                                    }
-                                                  >
-                                                    {spot.letter}
-                                                  </div>
-                                                )
-                                              )}
-                                            </div>
+                                                    <div
+                                                      key={j}
+                                                      className={
+                                                        "mb-2 inline-flex items-center justify-center p-2 border border-slate-900 " +
+                                                        (spot.spot === "correct"
+                                                          ? "bg-green-100 text-green-800 "
+                                                          : spot.spot ===
+                                                            "in the word"
+                                                          ? "bg-yellow-100 text-yellow-800 "
+                                                          : spot.spot ===
+                                                            "not there"
+                                                          ? "bg-red-100 text-red-800 "
+                                                          : "") +
+                                                        (todaysWordLength.length ===
+                                                        1
+                                                          ? "w-1/1"
+                                                          : todaysWordLength.length ===
+                                                            2
+                                                          ? "w-1/2"
+                                                          : todaysWordLength.length ===
+                                                            3
+                                                          ? "w-1/3"
+                                                          : todaysWordLength.length ===
+                                                            4
+                                                          ? "w-1/4"
+                                                          : todaysWordLength.length ===
+                                                            5
+                                                          ? "w-1/5"
+                                                          : todaysWordLength.length ===
+                                                            6
+                                                          ? "w-1/6"
+                                                          : todaysWordLength.length ===
+                                                            7
+                                                          ? "w-1/7"
+                                                          : todaysWordLength.length ===
+                                                            8
+                                                          ? "w-1/8"
+                                                          : todaysWordLength.length ===
+                                                            9
+                                                          ? "w-1/9"
+                                                          : todaysWordLength.length ===
+                                                            10
+                                                          ? "w-1/10"
+                                                          : todaysWordLength.length ===
+                                                            11
+                                                          ? "w-1/11"
+                                                          : todaysWordLength.length ===
+                                                            12
+                                                          ? "w-1/12"
+                                                          : "")
+                                                      }
+                                                    >
+                                                      {spot.letter}
+                                                    </div>
+                                                  )
+                                                )}
+                                              </div>
+                                            )
+                                            // <li key={i} className="py-4">
+                                            //   {guess.word}
+                                            //   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                            //     Badge
+                                            //   </span>
+                                            // </li>
                                           )
-                                          // <li key={i} className="py-4">
-                                          //   {guess.word}
-                                          //   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                                          //     Badge
-                                          //   </span>
-                                          // </li>
+                                        ) : (
+                                          <li>no guesses have been made yet</li>
                                         )
                                       ) : (
-                                        <li>no guesses have been made yet</li>
-                                      )
-                                    ) : (
-                                      <div>no user has played yet</div>
-                                    )}
+                                        <div>no user has played yet</div>
+                                      )}
+                                    </div>
+                                    <ToastContainer
+                                      position="top-right"
+                                      autoClose={5000}
+                                      hideProgressBar={false}
+                                      newestOnTop={false}
+                                      closeOnClick
+                                      rtl={false}
+                                      pauseOnFocusLoss
+                                      draggable
+                                      pauseOnHover
+                                    />
                                   </div>
-                                </div>
-                                <ToastContainer
-                                  position="top-right"
-                                  autoClose={5000}
-                                  hideProgressBar={false}
-                                  newestOnTop={false}
-                                  closeOnClick
-                                  rtl={false}
-                                  pauseOnFocusLoss
-                                  draggable
-                                  pauseOnHover
-                                />
+                                ) : (
+                                  <div>no word has been set today yet</div>
+                                )}
                                 {/* Same as */}
                                 <ToastContainer />
                               </div>

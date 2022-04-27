@@ -49,9 +49,8 @@ export default function Dashboard() {
                 </main>
                 <Footer />
               </div>
-            ) : (
-              <Spinner1 />
-            )}
+            ) : // <Spinner1 />
+            null}
           </>
         )}
       </UserAuthConsumer>

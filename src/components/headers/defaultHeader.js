@@ -273,13 +273,14 @@ export default function DefaultHeader() {
                               aria-hidden="true"
                             />
                           </span>
-                          <p className="ml-3 font-medium text-white truncate">
+                          <p className="ml-3 font-medium text-white  ">
                             <span className="md:hidden">
-                              We announced a new project coming soon!
+                              BIG NEWS! We're launching our word guessing game
+                              site at the end of May!
                             </span>
                             <span className="hidden md:inline">
-                              Big news! We're excited to announce a brand new
-                              project, coming soon!
+                              BIG NEWS! We're launching our word guessing game
+                              site at the end of May!
                             </span>
                           </p>
                         </div>
@@ -309,7 +310,7 @@ export default function DefaultHeader() {
                         as="div"
                         className="relative inline-block text-left"
                       >
-                        <div>
+                        {/* <div>
                           <Menu.Button className="uppercase inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
                             Site Language
                             <ChevronDownIcon
@@ -317,7 +318,7 @@ export default function DefaultHeader() {
                               aria-hidden="true"
                             />
                           </Menu.Button>
-                        </div>
+                        </div> */}
 
                         <Transition
                           as={Fragment}

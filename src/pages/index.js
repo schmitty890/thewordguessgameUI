@@ -6,6 +6,7 @@ import { UserAuthProvider, UserAuthConsumer } from "../contexts/userDataObject"
 import { TotalUsersProvider, TotalUsersConsumer } from "../contexts/totalUsers"
 import Spinner1 from "../components/spinners/spinner1"
 import Images from "../data/testData.json"
+import Subscribe1 from "../components/subscribe/subscribe1"
 
 export default function Home() {
   return (
@@ -47,13 +48,15 @@ export default function Home() {
                                   </h1>
                                   <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                                     A fun and competitive way to play a word
+                                    guessing game with friends and family!
+                                    {/* A fun and competitive way to play a word
                                     guessing game with friends and family with{" "}
                                     <span className="font-extrabold	">
                                       {totalUsers}
                                     </span>{" "}
-                                    total users!
+                                    total users! */}
                                   </p>
-                                  <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                  {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                     <div className="rounded-md shadow">
                                       <a
                                         href="/register"
@@ -70,7 +73,8 @@ export default function Home() {
                                         I already have an account
                                       </a>
                                     </div>
-                                  </div>
+                                  </div> */}
+                                  <Subscribe1 />
                                 </div>
                               </main>
                             </div>

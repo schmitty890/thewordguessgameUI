@@ -47,6 +47,18 @@ const DailyGlobalGame = () => (
                               <div>
                                 <div className="min-h-full flex items-center justify-center">
                                   <div className="w-full">
+                                    <div className=" w-full ">
+                                      {userGlobalGameStats ? (
+                                        <div className=" ">
+                                          <div className="text-green-700">
+                                            Your streak:{" "}
+                                            {userGlobalGameStats.streak}
+                                          </div>
+                                        </div>
+                                      ) : (
+                                        <div>user has no streak</div>
+                                      )}
+                                    </div>
                                     <form
                                       className="mt-8 space-y-6"
                                       action="#"
@@ -220,7 +232,7 @@ const DailyGlobalGame = () => (
                                               <label className="sr-only">
                                                 word guess
                                               </label>
-                                              <div>
+                                              {/* <div>
                                                 word length:{" "}
                                                 {todaysWordLength ? (
                                                   <div>
@@ -229,7 +241,7 @@ const DailyGlobalGame = () => (
                                                 ) : (
                                                   <div>no word length</div>
                                                 )}
-                                              </div>
+                                              </div> */}
                                               {todaysWordLength
                                                 ? todaysWordLength.map(
                                                     (letter, i) => (
@@ -319,18 +331,11 @@ const DailyGlobalGame = () => (
                                   </div>
                                 </div>
 
-                                <div className=" w-full ">
-                                  {userGlobalGameStats ? (
-                                    <div>
-                                      streak: {userGlobalGameStats.streak}
-                                    </div>
-                                  ) : (
-                                    <div>user has no streak</div>
-                                  )}
-                                </div>
                                 {todaysWordLength ? (
                                   <div className="flow-root">
-                                    guesses
+                                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                                      Guesses
+                                    </h2>
                                     <ul
                                       role="list"
                                       className="divide-y divide-gray-200"
@@ -369,23 +374,6 @@ const DailyGlobalGame = () => (
                                               <div className=" " key={i}>
                                                 {guess.correctSpots.map(
                                                   (spot, j) => (
-                                                    // <span
-                                                    //   className={
-                                                    //     "w-1/6 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium " +
-                                                    //     (spot.spot === "correct"
-                                                    //       ? "bg-green-100 text-green-800"
-                                                    //       : spot.spot ===
-                                                    //         "in the word"
-                                                    //       ? "bg-yellow-100 text-yellow-800"
-                                                    //       : spot.spot ===
-                                                    //         "not there"
-                                                    //       ? "bg-red-100 text-red-800"
-                                                    //       : "")
-                                                    //   }
-                                                    // >
-                                                    //   {spot.letter}
-                                                    // </span>
-
                                                     <div
                                                       key={j}
                                                       className={

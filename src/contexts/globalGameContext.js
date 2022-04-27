@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import {
   getUsersDailyGuesses,
   dailyGlobalUserGuess,
+  determineResettingDailyGuesses,
+  determineDailyWordLength,
 } from "../api/dailyGlobalGame"
 
 const { Provider, Consumer } = React.createContext()
@@ -9,10 +11,34 @@ const { Provider, Consumer } = React.createContext()
 class GlobalGameProvider extends Component {
   state = {
     userGlobalGameStats: [],
+    todaysWordLength: null,
   }
 
+  componentWillMount() {
+    this.determineDailyWordLength()
+    this.determineResettingGuesses()
+  }
   componentDidMount() {
     this.getGuesses()
+  }
+
+  determineResettingGuesses = async () => {
+    const reset = await determineResettingDailyGuesses()
+    console.log(reset)
+    console.log("HERE HERE")
+    if (reset) {
+      if (reset.data.message === "refresh your browser") {
+        console.log(reset.data.message)
+        window.location.reload()
+      }
+    }
+  }
+  determineDailyWordLength = async () => {
+    const response = await determineDailyWordLength()
+    console.log(response)
+    this.setState({
+      todaysWordLength: response.data,
+    })
   }
 
   getGuesses = async () => {
@@ -31,6 +57,7 @@ class GlobalGameProvider extends Component {
     const response = await dailyGlobalUserGuess(guess)
     console.log(response)
     this.getGuesses()
+    return response
   }
 
   render() {
@@ -39,6 +66,7 @@ class GlobalGameProvider extends Component {
         value={{
           userGlobalGameStats: this.state.userGlobalGameStats,
           makeGuess: this.makeGuess,
+          todaysWordLength: this.state.todaysWordLength,
         }}
       >
         {this.props.children}

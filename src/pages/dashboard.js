@@ -33,13 +33,13 @@ export default function Dashboard() {
                     <div className="px-4 py-6 sm:px-0">
                       <div className="border-4 border-dashed border-gray-200 rounded-lg">
                         <div className="p-10">
-                          our main components will go here
-                          <div className=" ">Your games</div>
-                          <CurrentGames />
+                          {/* <div className=" ">Your games</div> */}
+                          <GlobalGame />
+                          {/* <CurrentGames />
                           <div className=" ">
                             <CreateGame />
-                          </div>
-                          <GlobalGame />
+                          </div> */}
+                          {/* <div>private game section</div> */}
                         </div>
                       </div>
                     </div>

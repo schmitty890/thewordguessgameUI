@@ -162,6 +162,7 @@ const DailyGlobalGame = () => (
 
                                         for (let input of inputSection.children) {
                                           input.onkeyup = function () {
+                                            // determine if user has clicked the delete button or not
                                             if (input.nextElementSibling) {
                                               console.log(
                                                 "see if we have to reset the focus"

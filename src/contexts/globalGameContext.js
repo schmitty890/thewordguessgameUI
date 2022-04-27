@@ -11,7 +11,7 @@ const { Provider, Consumer } = React.createContext()
 class GlobalGameProvider extends Component {
   state = {
     userGlobalGameStats: [],
-    todaysWordLength: null,
+    todaysWordLength: 0,
   }
 
   componentWillMount() {

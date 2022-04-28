@@ -35,3 +35,13 @@ The word guess game front end
     ```shell
     npm start
     ```
+
+### Branching process
+
+- Master is a 🔒protected branch🔒. This means we need at least 1 approval before we merge into our master branch. (having the master branch protected helps so we know for sure what is going into master, and noone can accidentally push code to it and break our site)
+- Develop will be the branch we create branches off of. Develop will be merged into master at the end of every day.
+- This screenshot 👇 illustrates this process
+- Feature A and Feature B are branches where we code our tasks. Once finished with making your edits, we merge that branch into develop. At the end of everyday, develop gets merged into master.
+- Then develop is updated with the latest version of master, and the process happens all over again.
+
+![screenshot](https://raw.githubusercontent.com/schmitty890/homestead/master/public/assets/images/branching.jpg)

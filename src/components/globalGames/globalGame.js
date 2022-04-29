@@ -5,7 +5,7 @@ export default function GlobalGame() {
     <div className=" ">
       {/* <p>play a global game</p> */}
       <a href="/dailyGlobalGame">
-        <button className="w-full bg-red-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
           play global game
         </button>
       </a>

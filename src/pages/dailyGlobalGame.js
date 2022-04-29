@@ -116,7 +116,7 @@ const DailyGlobalGame = () => (
 
                                         // console.log("the values")
                                         // console.log(valuesArr)
-                                        valuesArr = valuesArr.join("")
+                                        valuesArr = valuesArr.join("").toLowerCase()
                                         // console.log(valuesArr)
                                         // console.log(typeof valuesArr)
                                         // console.log(values)

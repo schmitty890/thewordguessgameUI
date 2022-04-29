@@ -377,7 +377,7 @@ const DailyGlobalGame = () => (
                                                     <div
                                                       key={j}
                                                       className={
-                                                        "mb-2 inline-flex items-center justify-center p-2 border border-slate-900 " +
+                                                        "capitalize mb-2 inline-flex items-center justify-center p-2 border border-slate-900 " +
                                                         (spot.spot === "correct"
                                                           ? "bg-green-100 text-green-800 "
                                                           : spot.spot ===

@@ -14,6 +14,7 @@ import { UserAuthProvider, UserAuthConsumer } from "../contexts/userDataObject"
 import Spinner1 from "../components/spinners/spinner1"
 import DefaultHeader from "../components/headers/defaultHeader"
 import Footer from "../components/footer"
+import * as Yup from "yup"
 
 const DailyGlobalGame = () => (
   <UserAuthProvider>
@@ -83,6 +84,26 @@ const DailyGlobalGame = () => (
                                         console.log("VALIDATE VALUES")
                                         console.log(values.wordGuess)
                                         console.log("VALIDATE VALUES")
+                                        function isLetter(char) {
+                                          return (
+                                            (char >= "A" && char <= "Z") ||
+                                            (char >= "a" && char <= "z")
+                                          )
+                                        }
+                                        let letterIsValid = isLetter(
+                                          values.wordGuess
+                                        )
+                                        console.log(
+                                          `letter is valid : ${letterIsValid}`
+                                        )
+                                        if (letterIsValid) {
+                                          console.log(
+                                            `letter is valid : ${letterIsValid}`
+                                          )
+                                          console.log(
+                                            "since letter is valid, we need to focus on the next input"
+                                          )
+                                        }
 
                                         // TODO WE NEED TO REDO THIS WHOLE VALIDATE SECTION
                                       }}
@@ -116,7 +137,9 @@ const DailyGlobalGame = () => (
 
                                         // console.log("the values")
                                         // console.log(valuesArr)
-                                        valuesArr = valuesArr.join("").toLowerCase()
+                                        valuesArr = valuesArr
+                                          .join("")
+                                          .toLowerCase()
                                         // console.log(valuesArr)
                                         // console.log(typeof valuesArr)
                                         // console.log(values)
@@ -252,6 +275,8 @@ const DailyGlobalGame = () => (
                                                         onChange={handleChange}
                                                         onBlur={handleBlur}
                                                         required
+                                                        pattern="[A-Za-z]"
+                                                        title="Please use alphabet letters only"
                                                         placeholder="Letter"
                                                         maxLength="1"
                                                         className={

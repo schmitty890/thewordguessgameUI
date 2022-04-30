@@ -14,13 +14,14 @@ import { UserAuthProvider, UserAuthConsumer } from "../contexts/userDataObject"
 import Spinner1 from "../components/spinners/spinner1"
 import DefaultHeader from "../components/headers/defaultHeader"
 import Footer from "../components/footer"
-import * as Yup from "yup"
+import Notification1 from "../components/notifications/notification1"
 
 const DailyGlobalGame = () => (
   <UserAuthProvider>
     <UserAuthConsumer>
       {({ userID, loggedIn, logout, loading }) => (
         <>
+          <Notification1 />
           {loggedIn ? (
             <div className="min-h-full">
               <DefaultHeader />

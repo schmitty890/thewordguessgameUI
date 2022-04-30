@@ -4,7 +4,7 @@
       "id": 1,
       "title": "release notes page",
       "version": "0.0.1",
-      "date": "04/29/2022",
+      "date": "4/29/2022",
       "description": "release notes page added",
       "newFeatures": [
         {
@@ -28,7 +28,11 @@
         {
           "additionalResource": "View the release notes page for reference at: https://thewordguessgame.com/releaseNotes"
         }
-      ]
+      ],
+      "notification": {
+        "title": "Update",
+        "description": "You no longer have to worry about capitalization in your guesses"
+      }
     }
   ]
 }

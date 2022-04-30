@@ -9,6 +9,7 @@ import CreateGame from "../components/games/createGame"
 import CurrentGames from "../components/games/currentGames"
 import GlobalGame from "../components/globalGames/globalGame"
 import Footer from "../components/footer"
+import Notification1 from "../components/notifications/notification1"
 
 export default function Dashboard() {
   return (
@@ -16,6 +17,7 @@ export default function Dashboard() {
       <UserAuthConsumer>
         {({ userID, loggedIn, logout, loading }) => (
           <>
+            <Notification1 />
             {loggedIn ? (
               <div className="min-h-full">
                 <DefaultHeader />

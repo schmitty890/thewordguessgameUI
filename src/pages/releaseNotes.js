@@ -1,7 +1,12 @@
 import React from "react"
 import DefaultHeader from "../components/headers/defaultHeader"
 import { UserAuthProvider, UserAuthConsumer } from "../contexts/userDataObject"
+import {
+  NotificationProvider,
+  NotificationConsumer,
+} from "../contexts/notificationContext"
 import ReleaseNotesData from "../data/releaseNotes.json"
+import Notification1 from "../components/notifications/notification1"
 
 const ReleaseNotes = () => (
   <UserAuthProvider>
@@ -9,6 +14,7 @@ const ReleaseNotes = () => (
       {({ userID, loggedIn, logout, loading }) => (
         <div className="min-h-full">
           <DefaultHeader />
+          <Notification1 />
 
           <header className="bg-white shadow">
             <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">

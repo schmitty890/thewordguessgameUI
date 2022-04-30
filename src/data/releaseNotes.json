@@ -1,0 +1,34 @@
+{
+  "releases": [
+    {
+      "id": 1,
+      "title": "title",
+      "version": "0.0.1",
+      "date": "04/29/2022",
+      "description": "release notes",
+      "newFeatures": [
+        {
+          "feature": "Added release notes page for users and developers to track new features"
+        }
+      ],
+      "bugFixes": [
+        {
+          "bug": "Users can now submit words with capital or lowercase letters, the checking is no longer case sensitive."
+        },
+        {
+          "bug": "Users are no longer allowed to submit numeric values to the global daily game."
+        }
+      ],
+      "improvements": [
+        {
+          "improvement": "Icon color and size styling is improved on the release notes page."
+        }
+      ],
+      "additionalResources": [
+        {
+          "additionalResource": "View the release notes page for reference at: https://thewordguessgame.com/releaseNotes"
+        }
+      ]
+    }
+  ]
+}

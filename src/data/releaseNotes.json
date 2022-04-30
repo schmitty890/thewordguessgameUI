@@ -2,10 +2,10 @@
   "releases": [
     {
       "id": 1,
-      "title": "title",
+      "title": "release notes page",
       "version": "0.0.1",
       "date": "04/29/2022",
-      "description": "release notes",
+      "description": "release notes page added",
       "newFeatures": [
         {
           "feature": "Added release notes page for users and developers to track new features"

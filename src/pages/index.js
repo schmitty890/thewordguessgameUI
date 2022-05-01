@@ -42,7 +42,7 @@ export default function Home() {
                                     <span className="block xl:inline">
                                       The word guess game
                                     </span>{" "}
-                                    <span className="block text-indigo-600 xl:inline">
+                                    <span className="block text-green-600 xl:inline">
                                       Guess that word...
                                     </span>
                                   </h1>

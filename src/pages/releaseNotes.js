@@ -29,7 +29,7 @@ const ReleaseNotes = () => (
               <div className="px-4 py-6 sm:px-0">
                 <div className="border-4 border-dashed border-gray-200 rounded-lg">
                   <div className="p-10 ">
-                    {ReleaseNotesData.releases.map((release, i) => (
+                    {ReleaseNotesData.releases.reverse().map((release, i) => (
                       <div
                         key={release.id}
                         className="pb-1 border-b-2 border-gray-700"

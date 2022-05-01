@@ -19,13 +19,13 @@ const Subscribe1 = () => (
         id="email-address"
         autoComplete="email"
         required
-        className="appearance-none min-w-0 w-full bg-white border border-gray-300 py-2 px-4 text-base rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:placeholder-gray-400 sm:max-w-xs"
+        className="appearance-none min-w-0 w-full bg-white border border-gray-300 py-2 px-4 text-base rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-green-900 focus:border-green-900 focus:placeholder-gray-400 sm:max-w-xs"
         placeholder="Enter your email"
       />
       <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
         <button
           type="submit"
-          className="w-full bg-indigo-500 border border-transparent rounded-md py-2 px-4 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500"
+          className="w-full flex justify-center py-2 px-4 border text-sm font-medium rounded-md text-green-900 bg-transparent hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-900 hover:text-white border-green-900"
         >
           Subscribe
         </button>

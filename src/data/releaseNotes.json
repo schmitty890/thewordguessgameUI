@@ -2,7 +2,7 @@
   "releases": [
     {
       "id": 1,
-      "title": "release notes page",
+      "title": "Release Notes Page",
       "version": "0.0.1",
       "date": "4/29/2022",
       "description": "release notes page added",
@@ -32,6 +32,22 @@
       "notification": {
         "title": "Update",
         "description": "You no longer have to worry about capitalization in your guesses"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Logo",
+      "version": "0.0.1",
+      "date": "4/30/2022",
+      "description": "new logo added",
+      "improvements": [
+        {
+          "improvement": "New logo has been added and color schemes are beginning to be applied throught the site."
+        }
+      ],
+      "notification": {
+        "title": "New logo and color scheme",
+        "description": "Our branding has improved with a logo and color scheme!"
       }
     }
   ]

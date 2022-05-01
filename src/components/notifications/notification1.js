@@ -2,7 +2,7 @@
 import React from "react"
 import { Fragment, useState } from "react"
 import { Transition } from "@headlessui/react"
-import { InboxIcon } from "@heroicons/react/outline"
+import { CheckCircleIcon } from "@heroicons/react/outline"
 import { XIcon } from "@heroicons/react/solid"
 import {
   NotificationProvider,
@@ -38,12 +38,12 @@ export default function Notification1() {
                     <div className="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
                       <div className="p-4">
                         <div className="flex items-start">
-                          {/* <div className="flex-shrink-0">
-                    <InboxIcon
-                      className="h-6 w-6 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </div> */}
+                          <div className="flex-shrink-0">
+                            <CheckCircleIcon
+                              className="h-6 w-6 text-green-400"
+                              aria-hidden="true"
+                            />
+                          </div>
                           <div className="ml-3 w-0 flex-1 pt-0.5">
                             <p className="text-sm font-medium text-gray-900">
                               {title}

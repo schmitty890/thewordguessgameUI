@@ -41,9 +41,12 @@ class NotificationProvider extends Component {
   }
 
   setUserHasSeenNotification = async () => {
+    const last_element = ReleaseNotesData.releases.findLast(item => {
+      return item
+    })
     console.log("setUserHasSeenNotification")
     localStorage.setItem("notification", "seen")
-    localStorage.setItem("notification_id", "4/29/2022")
+    localStorage.setItem("notification_id", last_element.date)
   }
 
   // getUsers = async () => {

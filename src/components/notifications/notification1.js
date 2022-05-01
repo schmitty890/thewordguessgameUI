@@ -54,7 +54,7 @@ export default function Notification1() {
                             <div className="mt-3 flex space-x-7">
                               <button
                                 type="button"
-                                className="bg-white rounded-md text-sm font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className="bg-transparent hover:bg-green-900 text-green-900 font-semibold hover:text-white py-2 px-4 border border-green-900 hover:border-transparent rounded"
                                 onClick={() => {
                                   setUserHasSeenNotification()
                                   setShow(false)

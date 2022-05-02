@@ -49,6 +49,22 @@
         "title": "New logo and color scheme",
         "description": "Our branding has improved with a logo and color scheme!"
       }
+    },
+    {
+      "id": 3,
+      "title": "Subscribe",
+      "version": "0.0.1",
+      "date": "5/1/2022",
+      "description": "Add your email to our subscription service to get emailed the latest and greatest game features to stay up to date with our game progress!",
+      "newFeatures": [
+        {
+          "feature": "Users can submit their email for subscription to get latest news and updates on our game"
+        }
+      ],
+      "notification": {
+        "title": "Subscription emails are here",
+        "description": "Users can now opt in to submitting their email to get the latest newsletters on the newest updates and features. Don't worry, we won't spam you"
+      }
     }
   ]
 }

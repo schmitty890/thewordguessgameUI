@@ -56,11 +56,11 @@ export default function Home() {
                                     </span>{" "}
                                     total users! */}
                                   </p>
-                                  {/* <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                  <div className="mt-5 mb-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                                     <div className="rounded-md shadow">
                                       <a
                                         href="/register"
-                                        className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+                                        className="w-full flex items-center justify-center px-8 py-3 border border-green-900 text-base font-medium rounded-md text-white hover:text-green-900 bg-green-900 hover:bg-transparent md:py-4 md:text-lg md:px-10"
                                       >
                                         Get started
                                       </a>
@@ -68,13 +68,25 @@ export default function Home() {
                                     <div className="mt-3 sm:mt-0 sm:ml-3">
                                       <a
                                         href="/login"
-                                        className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
+                                        className="w-full flex items-center justify-center px-8 py-3 border focus:ring-green-900 hover:text-white border-green-900 text-base font-medium rounded-md text-green-900 bg-transparent hover:bg-green-900 md:py-4 md:text-lg md:px-10"
                                       >
                                         I already have an account
                                       </a>
                                     </div>
-                                  </div> */}
-                                  <Subscribe1 />
+                                  </div>
+                                  <div className="mt-8 xl:mt-0">
+                                    <h3 className="text-sm font-semibold text-gray-500 tracking-wider uppercase">
+                                      Subscribe to our newsletter
+                                    </h3>
+                                    <p className=" text-base text-gray-500">
+                                      The latest news, articles, and resources,
+                                      sent to your inbox monthly.
+                                    </p>
+                                    <p className="text-xs	text-gray-500">
+                                      Don't worry, we won't spam you.
+                                    </p>
+                                    <Subscribe1 />
+                                  </div>
                                 </div>
                               </main>
                             </div>

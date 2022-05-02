@@ -11,7 +11,6 @@ class NotificationProvider extends Component {
   }
 
   componentDidMount() {
-    debugger
     this.hasUserSeenNotification()
   }
 

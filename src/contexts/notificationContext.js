@@ -5,12 +5,13 @@ const { Provider, Consumer } = React.createContext()
 
 class NotificationProvider extends Component {
   state = {
-    seen: false,
+    seen: true,
     title: "",
     description: "",
   }
 
   componentDidMount() {
+    debugger
     this.hasUserSeenNotification()
   }
 
@@ -33,6 +34,10 @@ class NotificationProvider extends Component {
     if (notification_id === last_element.date) {
       this.setState({
         seen: true,
+      })
+    } else {
+      this.setState({
+        seen: false,
       })
     }
     // console.log(last_element)

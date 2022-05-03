@@ -56,6 +56,12 @@ const DailyGlobalGame = () => (
                                             Your streak:{" "}
                                             {userGlobalGameStats.streak}
                                           </div>
+                                          <div className="text-green-700">
+                                            Attempts remainging:{" "}
+                                            {
+                                              userGlobalGameStats.attemptsRemaining
+                                            }
+                                          </div>
                                         </div>
                                       ) : (
                                         <div>user has no streak</div>
@@ -224,6 +230,14 @@ const DailyGlobalGame = () => (
                                               render: `${response.data.message} `,
                                               type: toast.TYPE.WARNING,
                                               autoClose: 5000,
+                                            })
+                                          }, 1000)
+                                        } else {
+                                          setTimeout(() => {
+                                            toast.update(testToast, {
+                                              render: `${response.data.message} `,
+                                              type: toast.TYPE.ERROR,
+                                              autoClose: false,
                                             })
                                           }, 1000)
                                         }
@@ -487,7 +501,7 @@ const DailyGlobalGame = () => (
                                     </div>
                                     <ToastContainer
                                       position="top-right"
-                                      autoClose={5000}
+                                      // autoClose={5000}
                                       hideProgressBar={false}
                                       newestOnTop={false}
                                       closeOnClick

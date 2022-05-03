@@ -65,6 +65,22 @@
         "title": "Subscription emails are here",
         "description": "Users can now opt in to submitting their email to get the latest newsletters on the newest updates and features. Don't worry, we won't spam you"
       }
+    },
+    {
+      "id": 4,
+      "title": "Answers shown upon failure",
+      "version": "0.0.1",
+      "date": "5/2/2022",
+      "description": "If a user is unsuccessful on guessing the correct guess, they are now notified of the correct answer.",
+      "newFeatures": [
+        {
+          "feature": "Users are now shown the correct answer whether they guess the correct answer before their attempts are up or if their attempts are up they are shown the answer"
+        }
+      ],
+      "notification": {
+        "title": "Answers shown",
+        "description": "Answers in the global daily guess game are now shown when a user does not guess the correct guess in their amount of attempts"
+      }
     }
   ]
 }

@@ -278,7 +278,7 @@ const DailyGlobalGame = () => (
                                             name="remember"
                                             defaultValue="true"
                                           />
-                                          <div className="rounded-md shadow-sm -space-y-px">
+                                          <div className="rounded-md shadow-sm">
                                             <div id="input-section">
                                               <label className="sr-only">
                                                 word guess
@@ -308,7 +308,7 @@ const DailyGlobalGame = () => (
                                                         placeholder="Letter"
                                                         maxLength="1"
                                                         className={
-                                                          "wordGuess inline-flex text-center appearance-none rounded-none relative px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-900 focus:border-green-900 focus:z-10 sm:text-sm " +
+                                                          "wordGuess inline-flex text-center appearance-none rounded-none relative py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-green-900 focus:border-green-900 focus:z-10 sm:text-sm " +
                                                           (todaysWordLength.length ===
                                                           1
                                                             ? "w-1/1"

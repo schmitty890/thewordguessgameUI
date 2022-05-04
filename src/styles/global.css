@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.w-1\/7 {
+  width: 14.285714285%;
+}
+.w-1\/8 {
+  width: 12.5%;
+}
+.w-1\/9 {
+  width: 11.111111111%;
+}
+.w-1\/10 {
+  width: 10%;
+}
+.w-1\/11 {
+  width: 9.09090909%;
+}
+.w-1\/12 {
+  width: 8.333333333%;
+}

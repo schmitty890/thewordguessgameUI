@@ -120,12 +120,43 @@ const DailyGlobalGame = () => (
                                           console.log(
                                             `letter is valid : ${letterIsValid}`
                                           )
+
                                           console.log(
                                             "since letter is valid, we need to focus on the next input"
                                           )
+                                          // console.log(values.wordGuess.length)
+                                          // console.log(values)
+                                          let inputFields =
+                                            document.querySelectorAll(
+                                              ".wordGuess"
+                                            )
+                                          // console.log(inputFields.length)
+                                          document
+                                            .querySelectorAll(".wordGuess")
+                                            .forEach(function (input) {
+                                              input.addEventListener(
+                                                "keyup",
+                                                function () {
+                                                  if (
+                                                    input.value.length >=
+                                                      input.getAttribute(
+                                                        "maxlength"
+                                                      ) &&
+                                                    letterIsValid
+                                                  ) {
+                                                    if (
+                                                      input.nextElementSibling !=
+                                                      null
+                                                    ) {
+                                                      input.nextElementSibling.focus()
+                                                    }
+                                                  }
+                                                }
+                                              )
+                                            })
                                         }
 
-                                        // TODO WE NEED TO REDO THIS WHOLE VALIDATE SECTION
+                                        console.log(typeof letterIsValid)
                                       }}
                                       onSubmit={async (
                                         values,
@@ -346,6 +377,9 @@ const DailyGlobalGame = () => (
                                                               12
                                                             ? "w-1/12"
                                                             : "")
+                                                        }
+                                                        autoFocus={
+                                                          i === 0 ? true : null
                                                         }
                                                       />
                                                     )

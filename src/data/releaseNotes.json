@@ -81,6 +81,22 @@
         "title": "Answers shown",
         "description": "Answers in the global daily guess game are now shown when a user does not guess the correct guess in their amount of attempts"
       }
+    },
+    {
+      "id": 5,
+      "title": "Auto tab",
+      "version": "0.0.1",
+      "date": "5/11/2022",
+      "description": "Users no longer have to manually click the next input field to type in a letter. Once a letter is added, it automatically tabs to the next input field on the daily global game.",
+      "improvements": [
+        {
+          "feature": "Auto tab is implemented so users no longer have to manually select the next input field when guessing a letter on the global daily game."
+        }
+      ],
+      "notification": {
+        "title": "Auto focus and auto tab",
+        "description": "When you load the daily global game, you now automatically start at the first input field. You no longer have to manually click into the next input field to type a letter."
+      }
     }
   ]
 }
